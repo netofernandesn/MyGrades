@@ -18,7 +18,6 @@ public class GradesEditActivity extends Activity {
     private EditText edt_edad;
     private Grades grades;
     private GradesDAO gradesDAO;
-    private String msg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,25 +49,29 @@ public class GradesEditActivity extends Activity {
             double p2 = Double.parseDouble(edt_p2.getText().toString());
             double edad = Double.parseDouble(edt_edad.getText().toString());
 
-            if (grades == null) {
+            if (grades == null && !disciplina.trim().isEmpty()) {
                 Grades grades = new Grades(disciplina, p1, p2, edad);
                 gradesDAO.save(grades);
-                msg = "Disciplina gravada com sucesso! ";
-            } else {
+                Toast.makeText(this, "Disciplina gravada com sucesso! ", Toast.LENGTH_SHORT).show();
+                setResult(RESULT_OK);
+                finish();
+            } else if (grades != null && !disciplina.trim().isEmpty()) {
                 grades.setNome(disciplina);
                 grades.setP1(p1);
                 grades.setP2(p2);
                 grades.setEdad(edad);
                 gradesDAO.update(grades);
-                msg = "Disciplina atualizada com sucesso! ";
+                Toast.makeText(this, "Disciplina atualizada com sucesso! ", Toast.LENGTH_SHORT).show();
+                setResult(RESULT_OK);
+                finish();
+            } else {
+                Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_LONG).show();
             }
-
-            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-            setResult(RESULT_OK);
-            finish();
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_LONG).show();
         }
+
+
     }
 
     public void cancel(View view) {
