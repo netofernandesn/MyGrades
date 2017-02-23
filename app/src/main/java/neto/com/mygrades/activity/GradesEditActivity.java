@@ -18,6 +18,7 @@ public class GradesEditActivity extends Activity {
     private EditText edt_edad;
     private Grades grades;
     private GradesDAO gradesDAO;
+    private String msg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,28 +44,31 @@ public class GradesEditActivity extends Activity {
 
     public void process(View view) {
 
-        String disciplina = edt_disciplina.getText().toString();
-        double p1 = Double.parseDouble(edt_p1.getText().toString());
-        double p2 = Double.parseDouble(edt_p2.getText().toString());
-        double edad = Double.parseDouble(edt_edad.getText().toString());
-        String msg;
+        try {
+            String disciplina = edt_disciplina.getText().toString();
+            double p1 = Double.parseDouble(edt_p1.getText().toString());
+            double p2 = Double.parseDouble(edt_p2.getText().toString());
+            double edad = Double.parseDouble(edt_edad.getText().toString());
 
-        if (grades == null) {
-            Grades grades = new Grades(disciplina, p1, p2, edad);
-            gradesDAO.save(grades);
-            msg = "Disciplina gravada com sucesso! ";
-        } else {
-            grades.setNome(disciplina);
-            grades.setP1(p1);
-            grades.setP2(p2);
-            grades.setEdad(edad);
-            gradesDAO.update(grades);
-            msg = "Disciplina atualizada com sucesso! ";
+            if (grades == null) {
+                Grades grades = new Grades(disciplina, p1, p2, edad);
+                gradesDAO.save(grades);
+                msg = "Disciplina gravada com sucesso! ";
+            } else {
+                grades.setNome(disciplina);
+                grades.setP1(p1);
+                grades.setP2(p2);
+                grades.setEdad(edad);
+                gradesDAO.update(grades);
+                msg = "Disciplina atualizada com sucesso! ";
+            }
+
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+            setResult(RESULT_OK);
+            finish();
+        } catch (Exception e) {
+            Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_LONG).show();
         }
-
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-        setResult(RESULT_OK);
-        finish();
     }
 
     public void cancel(View view) {
