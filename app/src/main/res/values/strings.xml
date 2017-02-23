@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyGrades</string>
+    <string name="txt_disciplina">Nenhuma Disciplina cadastrada</string>
+    <string name="add">Adicionar</string>
+    <string name="disciplina">Disciplina:</string>
+    <string name="p1">Prova 1:</string>
+    <string name="p2">Prova 2</string>
+    <string name="edad">EDAD:</string>
+    <string name="ok">OK</string>
+    <string name="cancelar">CANCELAR</string>
+    <string name="excluir">Excluir</string>
+</resources>
