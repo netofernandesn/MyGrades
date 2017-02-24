@@ -12,6 +12,7 @@ import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -82,6 +83,8 @@ public class GradesListActivity extends ListActivity implements AbsListView.Mult
             Intent intent = new Intent(this, GradesEditActivity.class);
             startActivityForResult(intent, REQ_CODE);
             return true;
+        } else {
+            Toast.makeText(this, "Not implemented yet", Toast.LENGTH_LONG).show();
         }
         return  super.onOptionsItemSelected(item);
     }
