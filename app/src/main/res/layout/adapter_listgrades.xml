@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/txt_adapterdisc"
+        style="?android:attr/textAppearanceSmall"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_weight="1"
-        android:layout_marginStart="10dp"
-        style="?android:attr/textAppearanceSmall"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txt_adapterp1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
         android:layout_weight="1"
-        android:layout_marginLeft="5dp"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/holo_blue_dark" />
 
     <TextView
         android:id="@+id/txt_adapterp2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
         android:layout_weight="1"
-        android:layout_marginLeft="5dp"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/holo_blue_dark" />
 
     <TextView
         android:id="@+id/txt_adapteredad"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
         android:layout_weight="1"
-        android:layout_marginLeft="5dp"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/holo_blue_dark" />
 
 </LinearLayout>
