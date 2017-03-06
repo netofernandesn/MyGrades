@@ -41,7 +41,7 @@ public class GradesDAO {
 
         List<Grades> grades = new ArrayList<>();
 
-        try (Cursor c = db.query(GradesContract.TABLE_NAME, columns, null, null, null, null, GradesContract.Columns.DISCIPLINA)) {
+        try (Cursor c = db.query(GradesContract.TABLE_NAME, columns, null, null, null, null, null)) {
             if (c.moveToFirst()) {
                 do {
                     Grades g = GradesDAO.fromCursor(c);
@@ -84,4 +84,7 @@ public class GradesDAO {
     public void delete (Grades grades) {
         db.delete(GradesContract.TABLE_NAME, GradesContract.Columns._ID + " = ?", new String[] {String.valueOf(grades.getId())});
     }
+
+
+
 }

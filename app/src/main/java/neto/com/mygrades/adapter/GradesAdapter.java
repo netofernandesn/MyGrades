@@ -1,6 +1,7 @@
 package neto.com.mygrades.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +66,13 @@ public class GradesAdapter extends BaseAdapter {
         holder.txtP1.setText("Prova 1: " + String.format("%.2f", grade.getP1()));
         holder.txtP2.setText("Prova 2: " + String.format("%.2f", grade.getP2()));
         holder.txtEdad.setText("EDAD: " + String.format("%.2f", grade.getEdad()));
+
+//        if (position %2 ==0)
+//        {
+//            view.setBackgroundColor(Color.LTGRAY);
+//        } else {
+//            view.setBackgroundColor(Color.TRANSPARENT);
+//        }
 
         return view;
     }

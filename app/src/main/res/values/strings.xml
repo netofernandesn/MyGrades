@@ -10,4 +10,5 @@
     <string name="cancelar">CANCELAR</string>
     <string name="excluir">Excluir</string>
     <string name="relat">Relatório</string>
+    <string name="resultado_geral">Resultado Geral</string>
 </resources>
