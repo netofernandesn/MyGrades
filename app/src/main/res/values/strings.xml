@@ -9,6 +9,6 @@
     <string name="ok">OK</string>
     <string name="cancelar">CANCELAR</string>
     <string name="excluir">Excluir</string>
-    <string name="relat">Relatório</string>
+    <string name="relat">Resultado</string>
     <string name="resultado_geral">Resultado Geral</string>
 </resources>
